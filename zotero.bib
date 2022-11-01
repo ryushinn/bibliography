@@ -183,6 +183,7 @@
   urldate = {2022-10-21},
   abstract = {Although modern path tracers are successfully being applied to many rendering applications, there is considerable interest to push them towards ever-decreasing sampling rates. As the sampling rate is substantially reduced, however, even Monte Carlo (MC) denoisers–which have been very successful at removing large amounts of noise–typically do not produce acceptable final results. As an orthogonal approach to this, we believe that good importance sampling of paths is critical for producing better-converged, path-traced images at low sample counts that can then, for example, be more effectively denoised. However, most recent importance-sampling techniques for guiding path tracing (an area known as “path guiding”) involve expensive online (per-scene) training and offer benefits only at high sample counts. In this paper, we propose an offline, scene-independent deep-learning approach that can importance sample first-bounce light paths for general scenes without the need of the costly online training, and can start guiding path sampling with as little as 1 sample per pixel. Instead of learning to “overfit” to the sampling distribution of a specific scene like most previous work, our data-driven approach is trained a priori on a set of training scenes on how to use a local neighborhood of samples with additional feature information to reconstruct the full incident radiance at a point in the scene, which enables first-bounce importance sampling for new test scenes. Our solution is easy to integrate into existing rendering pipelines without the need for retraining, as we demonstrate by incorporating it into both the Blender/Cycles and Mitsuba path tracers. Finally, we show how our offline, deep importance sampler (ODIS) increases convergence at low sample counts and improves the results of an off-the-shelf denoiser relative to other state-of-the-art sampling techniques.},
   langid = {english},
+  keywords = {.skimmed},
   annotation = {\_eprint: https://onlinelibrary.wiley.com/doi/pdf/10.1111/cgf.13858}
 }
 
@@ -1436,7 +1437,7 @@
   urldate = {2022-01-19},
   abstract = {We address the problem of computing a textural loss based on the statistics extracted from the feature activations of a convolutional neural network optimized for object recognition (e.g. VGG-19). The underlying mathematical problem is the measure of the distance between two distributions in feature space. The Gram-matrix loss is the ubiquitous approximation for this problem but it is subject to several shortcomings. Our goal is to promote the Sliced Wasserstein Distance as a replacement for it. It is theoretically proven,practical, simple to implement, and achieves results that are visually superior for texture synthesis by optimization or training generative neural networks.},
   archiveprefix = {arXiv},
-  keywords = {Computer Science - Computer Vision and Pattern Recognition}
+  keywords = {.skimmed,Computer Science - Computer Vision and Pattern Recognition}
 }
 
 @inproceedings{henzlerEscapingPlatoCave2019,
@@ -2796,7 +2797,8 @@
   urldate = {2021-12-18},
   abstract = {The Bidirectional Reflectance Distribution Function (BRDF) describes the appearance of a material by its interaction with light at a surface point. A variety of analytical models have been proposed to represent BRDFs. However, analysis of these models has been scarce due to the lack of high-resolution measured data. In this work we evaluate several well-known analytical models in terms of their ability to fit measured BRDFs. We use an existing high-resolution data set of a hundred isotropic materials and compute the best approximation for each analytical model. Furthermore, we have built a new setup for efficient acquisition of anisotropic BRDFs, which allows us to acquire anisotropic materials at high resolution. We have measured four samples of anisotropic materials (brushed aluminum, velvet, and two satins). Based on the numerical errors, function plots, and rendered images we provide insights into the performance of the various models. We conclude that for most isotropic materials physically-based analytic reflectance models can represent their appearance quite well. We illustrate the important difference between the two common ways of defining the specular lobe: around the mirror direction and with respect to the half-vector. Our evaluation shows that the latter gives a more accurate shape for the reflection lobe. Our analysis of anisotropic materials indicates current parametric reflectance models cannot represent their appearances faithfully in many cases. We show that using a sampled microfacet distribution computed from measurements improves the fit and qualitatively reproduces the measurements.},
   isbn = {9783905673234},
-  langid = {english}
+  langid = {english},
+  keywords = {.skimmed}
 }
 
 @unpublished{nicholFirstOrderMetaLearningAlgorithms2018,
@@ -3812,7 +3814,7 @@
   url = {https://proceedings.neurips.cc/paper/2017/hash/1177967c7957072da3dc1db4ceb30e7a-Abstract.html},
   urldate = {2022-06-28},
   abstract = {Importance sampling has become an indispensable strategy to speed up optimization algorithms for large-scale applications. Improved adaptive variants -- using importance values defined by the complete gradient information which changes during optimization -- enjoy favorable theoretical properties, but are typically computationally infeasible. In this paper we propose an efficient approximation of gradient-based sampling, which is based on safe bounds on the gradient. The proposed sampling distribution is  (i) provably the \textbackslash emph\{best sampling\} with respect to the given bounds,  (ii) always better than uniform sampling and fixed importance sampling and  (iii) can efficiently be computed -- in many applications  at negligible extra cost. The proposed sampling scheme is generic and can easily be integrated into existing algorithms. In particular, we show that coordinate-descent (CD) and stochastic gradient descent (SGD) can enjoy significant a speed-up under the novel scheme. The proven efficiency of the proposed sampling is verified by extensive numerical testing.},
-  keywords = {⛔ No DOI found}
+  keywords = {.skimmed,⛔ No DOI found}
 }
 
 @article{sunConnectingMeasuredBRDFs2018,
@@ -3829,7 +3831,7 @@
   url = {https://doi.org/10.1145/3272127.3275026},
   urldate = {2022-09-03},
   abstract = {The bidirectional reflectance distribution function (BRDF) is crucial for modeling the appearance of real-world materials. In production rendering, analytic BRDF models are often used to approximate the surface appearance since they are compact and flexible. Measured BRDFs usually have a more realistic appearance, but consume much more storage and are hard to modify. In this paper, we propose a novel framework for connecting measured and analytic BRDFs. First, we develop a robust method for separating a measured BRDF into diffuse and specular components. This is commonly done in analytic models, but has been difficult previously to do explicitly for measured BRDFs. This diffuse-specular separation allows novel measured BRDF editing on the diffuse and specular parts separately. In addition, we conduct analysis on each part of the measured BRDF, and demonstrate a more intuitive and lower-dimensional PCA model than Nielsen et al. [2015]. In fact, our measured BRDF model has the same number of parameters (8 parameters) as the commonly used analytic models, such as the GGX model. Finally, we visualize the analytic and measured BRDFs in the same space, and directly demonstrate their similarities and differences. We also design an analytic fitting algorithm for two-lobe materials, which is more robust, efficient and simple, compared to previous non-convex optimization-based analytic fitting methods.},
-  keywords = {.skimmed,👀,analytic BRDF fitting,analytic BRDF models,measured BRDF editing,measured BRDF models}
+  keywords = {.skimmed,analytic BRDF fitting,analytic BRDF models,measured BRDF editing,measured BRDF models}
 }
 
 @article{sunNeural3DReconstruction2022,
@@ -4447,7 +4449,7 @@
   url = {https://doi.org/10.1145/3072959.3073600},
   urldate = {2022-08-19},
   abstract = {Physically-based fur rendering is difficult. Recently, structural differences between hair and fur fibers have been revealed by Yan et al. (2015), who showed that fur fibers have an inner scattering medulla, and developed a double cylinder model. However, fur rendering is still complicated due to the complex scattering paths through the medulla. We develop a number of optimizations that improve efficiency and generality without compromising accuracy, leading to a practical fur reflectance model. We also propose a key contribution to support both near and far-field rendering, and allow smooth transitions between them. Specifically, we derive a compact BCSDF model for fur reflectance with only 5 lobes. Our model unifies hair and fur rendering, making it easy to implement within standard hair rendering software, since we keep the traditional R, TT, and TRT lobes in hair, and only add two extensions to scattered lobes, TTs and TRTs. Moreover, we introduce a compression scheme using tensor decomposition to dramatically reduce the precomputed data storage for scattered lobes to only 150 KB, with minimal loss of accuracy. By exploiting piecewise analytic integration, our method further enables a multi-scale rendering scheme that transitions between near and far field rendering smoothly and efficiently for the first time, leading to 6 -- 8× speed up over previous work.},
-  keywords = {fur,multi-scale,reflectance}
+  keywords = {.skimmed,fur,multi-scale,reflectance}
 }
 
 @misc{yangDiffusionModelsComprehensive2022,
