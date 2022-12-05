@@ -106,6 +106,34 @@
   langid = {english}
 }
 
+@thesis{arvoAnalyticMethodsSimulated1995,
+  type = {phdthesis},
+  title = {Analytic Methods for Simulated Light Transport},
+  author = {Arvo, James Richard},
+  date = {1995},
+  institution = {{Yale University}},
+  location = {{USA}},
+  abstract = {This thesis presents new mathematical and computational tools for the simulation of light transport in realistic image synthesis. New algorithms are presented for exact computation of direct illumination effects related to light emission, shadowing, and first-order scattering from surfaces. New theoretical results are presented for the analysis of global illumination algorithms, which account for all interreflections of light among surfaces of an environment. First, a closed-form expression is derived for the irradiance Jacobian, which is the derivative of a vector field representing radiant energy flux. The expression holds for diffuse polygonal scenes and correctly accounts for shadowing, or partial occlusion. Three applications of the irradiance Jacobian are demonstrated: locating local irradiance extrema, direct computation of isolux contours, and surface mesh generation. Next, the concept of irradiance is generalized to tensors of arbitrary order. A recurrence relation for irradiance tensors is derived that extends a widely used formula published by Lambert in 1760. Several formulas with applications in computer graphics are derived from this recurrence relation and are independently verified using a new Monte Carlo method for sampling spherical triangles. The formulas extend the range of non-diffuse effects that can be computed in closed form to include illumination from directional area light sources and reflections from and transmissions through glossy surfaces. Finally, new analysis for global illumination is presented, which includes both direct illumination and indirect illumination due to multiple interreflections of light. A novel operator equation is proposed that clarifies existing deterministic algorithms for simulating global illumination and facilitates error analysis. Basic properties of the operators and solutions are identified which are not evident from previous formulations. A taxonomy of errors that arise in simulating global illumination is presented; these include perturbations of the boundary data, discretization error, and computational error. A priori bounds are derived for each category using properties of the proposed operators.},
+  pagetotal = {216},
+  annotation = {AAI9619140}
+}
+
+@inproceedings{arvoFrameworkAnalysisError1994,
+  title = {A Framework for the Analysis of Error in Global Illumination Algorithms},
+  booktitle = {Proceedings of the 21st Annual Conference on {{Computer}} Graphics and Interactive Techniques},
+  author = {Arvo, James and Torrance, Kenneth and Smits, Brian},
+  date = {1994-07-24},
+  series = {{{SIGGRAPH}} '94},
+  pages = {75--84},
+  publisher = {{Association for Computing Machinery}},
+  location = {{New York, NY, USA}},
+  doi = {10.1145/192161.192179},
+  url = {https://doi.org/10.1145/192161.192179},
+  urldate = {2022-11-05},
+  abstract = {In this paper we identify sources of error in global illumination algorithms and derive bounds for each distinct category. Errors arise from three sources: inaccuracies in the boundary data, discretization, and computation. Boundary data consists of surface geometry, reflectance functions, and emission functions, all of which may be perturbed by errors in measurement or simulation, or by simplifications made for computational efficiency. Discretization error is introduced by replacing the continuous radiative transfer equation with a finite-dimensional linear system, usually by means of boundary elements and a corresponding projection method. Finally, computational errors perturb the finite-dimensional linear system through imprecise form factors, inner products, visibility, etc., as well as by halting iterative solvers after a finite number of steps. Using the error taxonomy introduced in the paper we examine existing global illumination algorithms and suggest new avenues of research.},
+  isbn = {978-0-89791-667-7}
+}
+
 @unpublished{azinovicNeuralRGBDSurface2022,
   title = {Neural {{RGB-D Surface Reconstruction}}},
   author = {Azinović, Dejan and Martin-Brualla, Ricardo and Goldman, Dan B. and Nießner, Matthias and Thies, Justus},
@@ -118,6 +146,22 @@
   urldate = {2022-05-09},
   abstract = {Obtaining high-quality 3D reconstructions of room-scale scenes is of paramount importance for upcoming applications in AR or VR. These range from mixed reality applications for teleconferencing, virtual measuring, virtual room planing, to robotic applications. While current volume-based view synthesis methods that use neural radiance fields (NeRFs) show promising results in reproducing the appearance of an object or scene, they do not reconstruct an actual surface. The volumetric representation of the surface based on densities leads to artifacts when a surface is extracted using Marching Cubes, since during optimization, densities are accumulated along the ray and are not used at a single sample point in isolation. Instead of this volumetric representation of the surface, we propose to represent the surface using an implicit function (truncated signed distance function). We show how to incorporate this representation in the NeRF framework, and extend it to use depth measurements from a commodity RGB-D sensor, such as a Kinect. In addition, we propose a pose and camera refinement technique which improves the overall reconstruction quality. In contrast to concurrent work on integrating depth priors in NeRF which concentrates on novel view synthesis, our approach is able to reconstruct high-quality, metrical 3D reconstructions.},
   archiveprefix = {arXiv}
+}
+
+@article{baekImagebasedAcquisitionModeling2020,
+  title = {Image-Based Acquisition and Modeling of Polarimetric Reflectance},
+  author = {Baek, Seung-Hwan and Zeltner, Tizian and Ku, Hyun Jin and Hwang, Inseung and Tong, Xin and Jakob, Wenzel and Kim, Min H.},
+  date = {2020-08-12},
+  journaltitle = {ACM Transactions on Graphics},
+  shortjournal = {ACM Trans. Graph.},
+  volume = {39},
+  number = {4},
+  pages = {139:139:1--139:139:14},
+  issn = {0730-0301},
+  doi = {10.1145/3386569.3392387},
+  url = {https://doi.org/10.1145/3386569.3392387},
+  urldate = {2022-12-05},
+  abstract = {Realistic modeling of the bidirectional reflectance distribution function (BRDF) of scene objects is a vital prerequisite for any type of physically based rendering. In the last decades, the availability of databases containing real-world material measurements has fueled considerable innovation in the development of such models. However, previous work in this area was mainly focused on increasing the visual realism of images, and hence ignored the effect of scattering on the polarization state of light, which is normally imperceptible to the human eye. Existing databases thus only capture scattered flux, or polarimetric BRDF datasets are too directionally sparse (e.g., in-plane) to be usable for simulation. While subtle to human observers, polarization is easily perceived by any optical sensor (e.g., using polarizing filters), providing a wealth of additional information about shape and material properties of the object under observation. Given the increasing application of rendering in the solution of inverse problems via analysis-by-synthesis and differentiation, the ability to realistically model polarized radiative transport is thus highly desirable. Polarization depends on the wavelength of the spectrum, and thus we provide the first polarimetric BRDF (pBRDF) dataset that captures the polarimetric properties of real-world materials over the full angular domain, and at multiple wavelengths. Acquisition of such reflectance data is challenging due to the extremely large space of angular, spectral, and polarimetric configurations that must be observed, and we propose a scheme combining image-based acquisition with spectroscopic ellipsometry to perform measurements in a realistic amount of time. This process yields raw Mueller matrices, which we subsequently transform into Rusinkiewicz-parameterized pBRDFs that can be used for rendering. Our dataset provides 25 isotropic pBRDFs spanning a wide range of appearances: diffuse/specular, metallic/dielectric, rough/smooth, and different color albedos, captured in five wavelength ranges covering the visible spectrum. We demonstrate usage of our data-driven pBRDF model in a physically based renderer that accounts for polarized interreflection, and we investigate the relationship of polarization and material appearance, providing insights into the behavior of characteristic real-world pBRDFs.}
 }
 
 @inproceedings{baekPushingEnvelopeRGBBased2019,
@@ -194,6 +238,22 @@
   abstract = {Capturing the motion of two hands interacting with an object is a very challenging task due to the large number of degrees of freedom, self-occlusions, and similarity between the fingers, even in the case of multiple cameras observing the scene. In this paper we propose to use discriminatively learned salient points on the fingers and to estimate the finger-salient point associations simultaneously with the estimation of the hand pose. We introduce a differentiable objective function that also takes edges, optical flow and collisions into account. Our qualitative and quantitative evaluations show that the proposed approach achieves very accurate results for several challenging sequences containing hands and objects in action.},
   isbn = {978-3-642-33783-3},
   langid = {english}
+}
+
+@article{bangaruUnbiasedWarpedareaSampling2020,
+  title = {Unbiased Warped-Area Sampling for Differentiable Rendering},
+  author = {Bangaru, Sai Praveen and Li, Tzu-Mao and Durand, Frédo},
+  date = {2020-11-27},
+  journaltitle = {ACM Transactions on Graphics},
+  shortjournal = {ACM Trans. Graph.},
+  volume = {39},
+  number = {6},
+  pages = {245:1--245:18},
+  issn = {0730-0301},
+  doi = {10.1145/3414685.3417833},
+  url = {https://doi.org/10.1145/3414685.3417833},
+  urldate = {2022-11-27},
+  abstract = {Differentiable rendering computes derivatives of the light transport equation with respect to arbitrary 3D scene parameters, and enables various applications in inverse rendering and machine learning. We present an unbiased and efficient differentiable rendering algorithm that does not require explicit boundary sampling. We apply the divergence theorem to the derivative of the rendering integral to convert the boundary integral into an area integral. We rewrite the converted area integral to a form that is suitable for Monte Carlo rendering. We then develop an efficient Monte Carlo sampling algorithm for solving the area integral. Our method can be easily plugged into a traditional path tracer and does not require dedicated data structures for sampling boundaries. We analyze the convergence properties through bias-variance metrics, and demonstrate our estimator's advantages over existing methods for some synthetic inverse rendering examples.}
 }
 
 @inproceedings{barlaPraiseAlternativeBRDF2015,
@@ -405,6 +465,22 @@
   eventtitle = {{{IEEE Proceedings}}. {{VR}} 2005. {{Virtual Reality}}, 2005.}
 }
 
+@article{caiRobustImageDenoising2021,
+  title = {Robust {{Image Denoising}} Using {{Kernel Predicting Networks}}},
+  author = {Cai, Zhilin and Zhang, Yang and Manzi, Marco and Oztireli, Cengiz and Gross, Markus and Aydin, Tunç Ozan},
+  date = {2021},
+  journaltitle = {Eurographics 2021 - Short Papers},
+  pages = {4 pages},
+  publisher = {{The Eurographics Association}},
+  issn = {1017-4656},
+  doi = {10.2312/EGS.20211018},
+  url = {https://diglib.eg.org/handle/10.2312/egs20211018},
+  urldate = {2022-11-27},
+  abstract = {We present a new method for designing high quality denoisers that are robust to varying noise characteristics of input images. Instead of taking a conventional blind denoising approach or relying on explicit noise parameter estimation networks as well as invertible camera imaging pipeline models, we propose a two-stage model that first processes an input image with a small set of specialized denoisers, and then passes the resulting intermediate denoised images to a kernel predicting network that estimates per-pixel denoising kernels. We demonstrate that our approach achieves robustness to noise parameters at a level that exceeds comparable blind denoisers, while also coming close to state-of-the-art denoising quality for camera sensor noise.},
+  isbn = {9783038681335},
+  version = {037-040}
+}
+
 @article{camposORBSLAM3AccurateOpenSource2021,
   title = {{{ORB-SLAM3}}: {{An Accurate Open-Source Library}} for {{Visual}}, {{Visual}}–{{Inertial}}, and {{Multimap SLAM}}},
   shorttitle = {{{ORB-SLAM3}}},
@@ -611,6 +687,30 @@
   langid = {english}
 }
 
+@article{chizhovPerceptualErrorOptimization2022,
+  title = {Perceptual {{Error Optimization}} for {{Monte Carlo Rendering}}},
+  author = {Chizhov, Vassillen and Georgiev, Iliyan and Myszkowski, Karol and Singh, Gurprit},
+  date = {2022-03-07},
+  journaltitle = {ACM Transactions on Graphics},
+  shortjournal = {ACM Trans. Graph.},
+  volume = {41},
+  number = {3},
+  pages = {26:1--26:17},
+  issn = {0730-0301},
+  doi = {10.1145/3504002},
+  url = {https://doi.org/10.1145/3504002},
+  urldate = {2022-11-15},
+  abstract = {Synthesizing realistic images involves computing high-dimensional light-transport integrals. In practice, these integrals are numerically estimated via Monte Carlo integration. The error of this estimation manifests itself as conspicuous aliasing or noise. To ameliorate such artifacts and improve image fidelity, we propose a perception-oriented framework to optimize the error of Monte Carlo rendering. We leverage models based on human perception from the halftoning literature. The result is an optimization problem whose solution distributes the error as visually pleasing blue noise in image space. To find solutions, we present a set of algorithms that provide varying trade-offs between quality and speed, showing substantial improvements over prior state of the art. We perform evaluations using quantitative and error metrics and provide extensive supplemental material to demonstrate the perceptual improvements achieved by our methods.}
+}
+
+@article{christensenContinuousAdjointFormulation1993,
+  title = {A {{Continuous Adjoint Formulation}} for {{Radiance Transport}}},
+  author = {Christensen, Per H and Salesin, David H and DeRose, Tony D},
+  date = {1993},
+  pages = {12},
+  langid = {english}
+}
+
 @misc{cohenRiemannianConvexPotential2021,
   title = {Riemannian {{Convex Potential Maps}}},
   author = {Cohen, Samuel and Amos, Brandon and Lipman, Yaron},
@@ -652,6 +752,22 @@
   url = {http://link.springer.com/10.1007/BF00994018},
   urldate = {2022-04-05},
   langid = {english}
+}
+
+@article{crespoPrimaryspaceAdaptiveControl2021,
+  title = {Primary-Space {{Adaptive Control Variates Using Piecewise-polynomial Approximations}}},
+  author = {Crespo, Miguel and Jarabo, Adrian and Muñoz, Adolfo},
+  date = {2021-07-15},
+  journaltitle = {ACM Transactions on Graphics},
+  shortjournal = {ACM Trans. Graph.},
+  volume = {40},
+  number = {3},
+  pages = {25:1--25:15},
+  issn = {0730-0301},
+  doi = {10.1145/3450627},
+  url = {https://doi.org/10.1145/3450627},
+  urldate = {2022-12-05},
+  abstract = {We present an unbiased numerical integration algorithm that handles both low-frequency regions and high-frequency details of multidimensional integrals. It combines quadrature and Monte Carlo integration by using a quadrature-based approximation as a control variate of the signal. We adaptively build the control variate constructed as a piecewise polynomial, which can be analytically integrated, and accurately reconstructs the low-frequency regions of the integrand. We then recover the high-frequency details missed by the control variate by using Monte Carlo integration of the residual. Our work leverages importance sampling techniques by working in primary space, allowing the combination of multiple mappings; this enables multiple importance sampling in quadrature-based integration. Our algorithm is generic and can be applied to any complex multidimensional integral. We demonstrate its effectiveness with four applications with low dimensionality: transmittance estimation in heterogeneous participating media, low-order scattering in homogeneous media, direct illumination computation, and rendering of distribution effects. Finally, we show how our technique is extensible to integrands of higher dimensionality by computing the control variate on Monte Carlo estimates of the high-dimensional signal, and accounting for such additional dimensionality on the residual as well. In all cases, we show accurate results and faster convergence compared to previous approaches.}
 }
 
 @article{crowderLinearConvergenceConjugate1972,
@@ -758,6 +874,23 @@
   isbn = {978-1-4503-9337-9}
 }
 
+@inproceedings{deschaintreDeepPolarizationImaging2021,
+  title = {Deep {{Polarization Imaging}} for {{3D Shape}} and {{SVBRDF Acquisition}}},
+  booktitle = {2021 {{IEEE}}/{{CVF Conference}} on {{Computer Vision}} and {{Pattern Recognition}} ({{CVPR}})},
+  author = {Deschaintre, Valentin and Lin, Yiming and Ghosh, Abhijeet},
+  date = {2021-06},
+  pages = {15562--15571},
+  publisher = {{IEEE}},
+  location = {{Nashville, TN, USA}},
+  doi = {10.1109/CVPR46437.2021.01531},
+  url = {https://ieeexplore.ieee.org/document/9578508/},
+  urldate = {2022-11-25},
+  abstract = {We present a novel method for efficient acquisition of shape and spatially varying reflectance of 3D objects using polarization cues. Unlike previous works that have exploited polarization to estimate material or object appearance under certain constraints (known shape or multiview acquisition), we lift such restrictions by coupling polarization imaging with deep learning to achieve high quality estimate of 3D object shape (surface normals and depth) and SVBRDF using single-view polarization imaging under frontal flash illumination. In addition to acquired polarization images, we provide our deep network with strong novel cues related to shape and reflectance, in the form of a normalized Stokes map and an estimate of diffuse color. We additionally describe modifications to network architecture and training loss which provide further qualitative improvements. We demonstrate our approach to achieve superior results compared to recent works employing deep learning in conjunction with flash illumination.},
+  eventtitle = {2021 {{IEEE}}/{{CVF Conference}} on {{Computer Vision}} and {{Pattern Recognition}} ({{CVPR}})},
+  isbn = {978-1-66544-509-2},
+  langid = {english}
+}
+
 @article{deschaintreFlexibleSVBRDFCapture2019,
   title = {Flexible {{SVBRDF Capture}} with a {{Multi-Image Deep Network}}},
   author = {Deschaintre, Valentin and Aittala, Miika and Durand, Fredo and Drettakis, George and Bousseau, Adrien},
@@ -849,6 +982,23 @@
   langid = {english}
 }
 
+@article{dodikPathGuidingUsing2022,
+  title = {Path {{Guiding Using Spatio-Directional Mixture Models}}},
+  author = {Dodik, Ana and Papas, Marios and Öztireli, Cengiz and Müller, Thomas},
+  date = {2022},
+  journaltitle = {Computer Graphics Forum},
+  volume = {41},
+  number = {1},
+  pages = {172--189},
+  issn = {1467-8659},
+  doi = {10.1111/cgf.14428},
+  url = {https://onlinelibrary.wiley.com/doi/abs/10.1111/cgf.14428},
+  urldate = {2022-11-27},
+  abstract = {We propose a learning-based method for light-path construction in path tracing algorithms, which iteratively optimizes and samples from what we refer to as spatio-directional Gaussian mixture models (SDMMs). In particular, we approximate incident radiance as an online-trained 5D mixture that is accelerated by a D-tree. Using the same framework, we approximate BSDFs as pre-trained D mixtures, where is the number of BSDF parameters. Such an approach addresses two major challenges in path-guiding models. First, the 5D radiance representation naturally captures correlation between the spatial and directional dimensions. Such correlations are present in, for example parallax and caustics. Second, by using a tangent-space parameterization of Gaussians, our spatio-directional mixtures can perform approximate product sampling with arbitrarily oriented BSDFs. Existing models are only able to do this by either foregoing anisotropy of the mixture components or by representing the radiance field in local (normal aligned) coordinates, which both make the radiance field more difficult to learn. An additional benefit of the tangent-space parameterization is that each individual Gaussian is mapped to the solid sphere with low distortion near its centre of mass. Our method performs especially well on scenes with small, localized luminaires that induce high spatio-directional correlation in the incident radiance.},
+  langid = {english},
+  annotation = {\_eprint: https://onlinelibrary.wiley.com/doi/pdf/10.1111/cgf.14428}
+}
+
 @misc{donahueAdversarialFeatureLearning2017,
   title = {Adversarial {{Feature Learning}}},
   author = {Donahue, Jeff and Krähenbühl, Philipp and Darrell, Trevor},
@@ -909,6 +1059,23 @@
   urldate = {2022-05-15},
   abstract = {One of the key ingredients of any physically based rendering system is a detailed specification characterizing the interaction of light and matter of all materials present in a scene, typically via the Bidirectional Reflectance Distribution Function (BRDF). Despite their utility, access to real-world BRDF datasets remains limited: this is because measurements involve scanning a four-dimensional domain at sufficient resolution, a tedious and often infeasibly time-consuming process.             We propose a new parameterization that automatically adapts to the behavior of a material, warping the underlying 4D domain so that most of the volume maps to regions where the BRDF takes on non-negligible values, while irrelevant regions are strongly compressed. This adaptation only requires a brief 1D or 2D measurement of the material's retro-reflective properties. Our parameterization is unified in the sense that it combines several steps that previously required intermediate data conversions: the same mapping can simultaneously be used for BRDF acquisition, storage, and it supports efficient Monte Carlo sample generation.             We observe that the above desiderata are satisfied by a core operation present in modern rendering systems, which maps uniform variates to direction samples that are proportional to an analytic BRDF. Based on this insight, we define our adaptive parameterization as an invertible, retro-reflectively driven mapping between the parametric and directional domains. We are able to create noise-free renderings of existing BRDF datasets after conversion into our representation with the added benefit that the warped data is significantly more compact, requiring 16KiB and 544KiB per spectral channel for isotropic and anisotropic specimens, respectively.             Finally, we show how to modify an existing gonio-photometer to provide the needed retro-reflection measurements. Acquisition then proceeds within a 4D space that is warped by our parameterization. We demonstrate the efficacy of this scheme by acquiring the first set of spectral BRDFs of surfaces exhibiting arbitrary roughness, including anisotropy.},
   langid = {english}
+}
+
+@article{dupuyExtractingMicrofacetbasedBRDF2015,
+  title = {Extracting {{Microfacet-based BRDF Parameters}} from {{Arbitrary Materials}} with {{Power Iterations}}},
+  author = {Dupuy, Jonathan and Heitz, Eric and Iehl, Jean-Claude and Poulin, Pierre and Ostromoukhov, Victor},
+  date = {2015},
+  journaltitle = {Computer Graphics Forum},
+  volume = {34},
+  number = {4},
+  pages = {21--30},
+  issn = {1467-8659},
+  doi = {10.1111/cgf.12675},
+  url = {https://onlinelibrary.wiley.com/doi/abs/10.1111/cgf.12675},
+  urldate = {2022-12-05},
+  abstract = {We introduce a novel fitting procedure that takes as input an arbitrary material, possibly anisotropic, and automatically converts it to a microfacet BRDF. Our algorithm is based on the property that the distribution of microfacets may be retrieved by solving an eigenvector problem that is built solely from backscattering samples. We show that the eigenvector associated to the largest eigenvalue is always the only solution to this problem, and compute it using the power iteration method. This approach is straightforward to implement, much faster to compute, and considerably more robust than solutions based on nonlinear optimizations. In addition, we provide simple conversion procedures of our fits into both Beckmann and GGX roughness parameters, and discuss the advantages of microfacet slope space to make our fits editable. We apply our method to measured materials from two large databases that include anisotropic materials, and demonstrate the benefits of spatially varying roughness on texture mapped geometric models.},
+  langid = {english},
+  annotation = {\_eprint: https://onlinelibrary.wiley.com/doi/pdf/10.1111/cgf.12675}
 }
 
 @inproceedings{durkanNeuralSplineFlows2019,
@@ -1243,7 +1410,7 @@
   eventtitle = {2021 {{International Conference}} on {{3D Vision}} ({{3DV}})}
 }
 
-@article{guarneraBRDFRepresentationAcquisition2016a,
+@article{guarneraBRDFRepresentationAcquisition2016,
   title = {{{BRDF Representation}} and {{Acquisition}}},
   author = {Guarnera, D. and Guarnera, G.c. and Ghosh, A. and Denk, C. and Glencross, M.},
   date = {2016},
@@ -1258,6 +1425,18 @@
   abstract = {Photorealistic rendering of real world environments is important in a range of different areas; including Visual Special effects, Interior/Exterior Modelling, Architectural Modelling, Cultural Heritage, Computer Games and Automotive Design. Currently, rendering systems are able to produce photorealistic simulations of the appearance of many real-world materials. In the real world, viewer perception of objects depends on the lighting and object/material/surface characteristics, the way a surface interacts with the light and on how the light is reflected, scattered, absorbed by the surface and the impact these characteristics have on material appearance. In order to re-produce this, it is necessary to understand how materials interact with light. Thus the representation and acquisition of material models has become such an active research area. This survey of the state-of-the-art of BRDF Representation and Acquisition presents an overview of BRDF (Bidirectional Reflectance Distribution Function) models used to represent surface/material reflection characteristics, and describes current acquisition methods for the capture and rendering of photorealistic materials.},
   langid = {english},
   annotation = {\_eprint: https://onlinelibrary.wiley.com/doi/pdf/10.1111/cgf.12867}
+}
+
+@article{guarneragiuseppeclaudioSpectralUpsamplingApproaches2022,
+  title = {Spectral {{Upsampling Approaches}} for {{RGB Illumination}}},
+  author = {Guarnera, Giuseppe Claudio and Gitlina, Yuliya and Deschaintre, Valentin and Ghosh, Abhijeet},
+  date = {2022},
+  pages = {12 pages},
+  publisher = {{The Eurographics Association}},
+  doi = {10.2312/SR.20221150},
+  url = {https://diglib.eg.org/handle/10.2312/sr20221150},
+  urldate = {2022-11-25},
+  abstract = {We present two practical approaches for high fidelity spectral upsampling of previously recorded RGB illumination in the form of an image-based representation such as an RGB light probe. Unlike previous approaches that require multiple measurements with a spectrometer or a reference color chart under a target illumination environment, our method requires no additional information for the spectral upsampling step. Instead, we construct a data-driven basis of spectral distributions for incident illumination from a set of six RGBW LEDs (three narrowband and three broadband) that we employ to represent a given RGB color using a convex combination of the six basis spectra. We propose two different approaches for estimating the weights of the convex combination using – (a) genetic algorithm, and (b) neural networks. We additionally propose a theoretical basis consisting of a set of narrow and broad Gaussians as a generalization of the approach, and also evaluate an alternate LED basis for spectral upsampling. We achieve good qualitative matches of the predicted illumination spectrum using our spectral upsampling approach to ground truth illumination spectrum while achieving near perfect matching of the RGB color of the given illumination in the vast majority of cases. We demonstrate that the spectrally upsampled RGB illumination can be employed for various applications including improved lighting reproduction as well as more accurate spectral rendering.}
 }
 
 @article{guoMaterialGANReflectanceCapture2020,
@@ -1286,6 +1465,22 @@
   urldate = {2022-06-13},
   abstract = {This paper addresses the challenge of reconstructing 3D indoor scenes from multi-view images. Many previous works have shown impressive reconstruction results on textured objects, but they still have difficulty in handling low-textured planar regions, which are common in indoor scenes. An approach to solving this issue is to incorporate planer constraints into the depth map estimation in multi-view stereo-based methods, but the per-view plane estimation and depth optimization lack both efficiency and multi-view consistency. In this work, we show that the planar constraints can be conveniently integrated into the recent implicit neural representation-based reconstruction methods. Specifically, we use an MLP network to represent the signed distance function as the scene geometry. Based on the Manhattan-world assumption, planar constraints are employed to regularize the geometry in floor and wall regions predicted by a 2D semantic segmentation network. To resolve the inaccurate segmentation, we encode the semantics of 3D points with another MLP and design a novel loss that jointly optimizes the scene geometry and semantics in 3D space. Experiments on ScanNet and 7-Scenes datasets show that the proposed method outperforms previous methods by a large margin on 3D reconstruction quality. The code is available at https://zju3dv.github.io/manhattan\_sdf.},
   langid = {english}
+}
+
+@article{hachisukaMultidimensionalAdaptiveSampling2008,
+  title = {Multidimensional Adaptive Sampling and Reconstruction for Ray Tracing},
+  author = {Hachisuka, Toshiya and Jarosz, Wojciech and Weistroffer, Richard Peter and Dale, Kevin and Humphreys, Greg and Zwicker, Matthias and Jensen, Henrik Wann},
+  date = {2008-08-01},
+  journaltitle = {ACM Transactions on Graphics},
+  shortjournal = {ACM Trans. Graph.},
+  volume = {27},
+  number = {3},
+  pages = {1--10},
+  issn = {0730-0301},
+  doi = {10.1145/1360612.1360632},
+  url = {https://doi.org/10.1145/1360612.1360632},
+  urldate = {2022-11-14},
+  abstract = {We present a new adaptive sampling strategy for ray tracing. Our technique is specifically designed to handle multidimensional sample domains, and it is well suited for efficiently generating images with effects such as soft shadows, motion blur, and depth of field. These effects are problematic for existing image based adaptive sampling techniques as they operate on pixels, which are possibly noisy results of a Monte Carlo ray tracing process. Our sampling technique operates on samples in the multidimensional space given by the rendering equation and as a consequence the value of each sample is noise-free. Our algorithm consists of two passes. In the first pass we adaptively generate samples in the multidimensional space, focusing on regions where the local contrast between samples is high. In the second pass we reconstruct the image by integrating the multidimensional function along all but the image dimensions. We perform a high quality anisotropic reconstruction by determining the extent of each sample in the multidimensional space using a structure tensor. We demonstrate our method on scenes with a 3 to 5 dimensional space, including soft shadows, motion blur, and depth of field. The results show that our method uses fewer samples than Mittchell's adaptive sampling technique while producing images with less noise.}
 }
 
 @unpublished{haHyperNetworks2016,
@@ -1371,6 +1566,23 @@
   eventtitle = {2015 {{IEEE International Conference}} on {{Computer Vision}} ({{ICCV}})}
 }
 
+@article{heitzImportanceSamplingMicrofacetBased2014,
+  title = {Importance {{Sampling Microfacet-Based BSDFs}} Using the {{Distribution}} of {{Visible Normals}}},
+  author = {Heitz, E. and family=Eon, given=E., prefix=d', useprefix=true},
+  date = {2014},
+  journaltitle = {Computer Graphics Forum},
+  volume = {33},
+  number = {4},
+  pages = {103--112},
+  issn = {1467-8659},
+  doi = {10.1111/cgf.12417},
+  url = {https://onlinelibrary.wiley.com/doi/abs/10.1111/cgf.12417},
+  urldate = {2022-12-05},
+  abstract = {We present a new approach to microfacet-based BSDF importance sampling. Previously proposed sampling schemes for popular analytic BSDFs typically begin by choosing a microfacet normal at random in a way that is independent of direction of incident light. To sample the full BSDF using these normals requires arbitrarily large sample weights leading to possible fireflies. Additionally, at grazing angles nearly half of the sampled normals face away from the incident ray and must be rejected, making the sampling scheme inefficient. Instead, we show how to use the distribution of visible normals directly to generate samples, where normals are weighted by their projection factor toward the incident direction. In this way, no backfacing normals are sampled and the sample weights contain only the shadowing factor of outgoing rays (and additionally a Fresnel term for conductors). Arbitrarily large sample weights are avoided and variance is reduced. Since the BSDF depends on the microsurface model, we describe our sampling algorithm for two models: the V-cavity and the Smith models. We demonstrate results for both isotropic and anisotropic rough conductors and dielectrics with Beckmann and GGX distributions.},
+  langid = {english},
+  annotation = {\_eprint: https://onlinelibrary.wiley.com/doi/pdf/10.1111/cgf.12417}
+}
+
 @unpublished{heitzSlicedWassersteinLoss2021,
   title = {A {{Sliced Wasserstein Loss}} for {{Neural Texture Synthesis}}},
   author = {Heitz, Eric and Vanhoey, Kenneth and Chambon, Thomas and Belcour, Laurent},
@@ -1383,6 +1595,17 @@
   urldate = {2022-01-19},
   abstract = {We address the problem of computing a textural loss based on the statistics extracted from the feature activations of a convolutional neural network optimized for object recognition (e.g. VGG-19). The underlying mathematical problem is the measure of the distance between two distributions in feature space. The Gram-matrix loss is the ubiquitous approximation for this problem but it is subject to several shortcomings. Our goal is to promote the Sliced Wasserstein Distance as a replacement for it. It is theoretically proven,practical, simple to implement, and achieves results that are visually superior for texture synthesis by optimization or training generative neural networks.},
   archiveprefix = {arXiv}
+}
+
+@article{heiwoltStatisticalShapeRepresentations2022,
+  title = {Statistical Shape Representations for Temporal Registration of Plant Components in {{3D}}},
+  author = {Heiwolt, Karoline and Öztireli, Cengiz and Cielniak, Grzegorz},
+  date = {2022-09-23},
+  doi = {10.48550/arXiv.2209.11526},
+  url = {https://arxiv.org/abs/2209.11526v1},
+  urldate = {2022-11-27},
+  abstract = {Plants are dynamic organisms. Understanding temporal variations in vegetation is an essential problem for all robots in the wild. However, associating repeated 3D scans of plants across time is challenging. A key step in this process is re-identifying and tracking the same individual plant components over time. Previously, this has been achieved by comparing their global spatial or topological location. In this work, we demonstrate how using shape features improves temporal organ matching. We present a landmark-free shape compression algorithm, which allows for the extraction of 3D shape features of leaves, characterises leaf shape and curvature efficiently in few parameters, and makes the association of individual leaves in feature space possible. The approach combines 3D contour extraction and further compression using Principal Component Analysis (PCA) to produce a shape space encoding, which is entirely learned from data and retains information about edge contours and 3D curvature. Our evaluation on temporal scan sequences of tomato plants shows, that incorporating shape features improves temporal leaf-matching. A combination of shape, location, and rotation information proves most informative for recognition of leaves over time and yields a true positive rate of 75\%, a 15\% improvement on sate-of-the-art methods. This is essential for robotic crop monitoring, which enables whole-of-lifecycle phenotyping.},
+  langid = {english}
 }
 
 @inproceedings{henzlerEscapingPlatoCave2019,
@@ -1462,6 +1685,22 @@
   annotation = {\_eprint: https://onlinelibrary.wiley.com/doi/pdf/10.1111/cgf.13783}
 }
 
+@article{hickernellControlVariatesQuasiMonte2005,
+  title = {Control {{Variates}} for {{Quasi-Monte Carlo}}},
+  author = {Hickernell, Fred J. and Lemieux, Christiane and Owen, Art B.},
+  date = {2005-02},
+  journaltitle = {Statistical Science},
+  volume = {20},
+  number = {1},
+  pages = {1--31},
+  publisher = {{Institute of Mathematical Statistics}},
+  issn = {0883-4237, 2168-8745},
+  doi = {10.1214/088342304000000468},
+  url = {https://projecteuclid.org/journals/statistical-science/volume-20/issue-1/Control-Variates-for-Quasi-Monte-Carlo/10.1214/088342304000000468.full},
+  urldate = {2022-11-11},
+  abstract = {Quasi-Monte Carlo (QMC) methods have begun to displace ordinary Monte Carlo (MC) methods in many practical problems. It is natural and obvious to combine QMC methods with traditional variance reduction techniques used in MC sampling, such as control variates. There can, however, be some surprises. The optimal control variate coefficient for QMC methods is not in general the same as for MC. Using the MC formula for the control variate coefficient can worsen the performance of QMC methods. A good control variate in QMC is not necessarily one that correlates with the target integrand. Instead, certain high frequency parts or derivatives of the control variate should correlate with the corresponding quantities of the target. We present strategies for applying control variate coefficients with QMC and illustrate the method on a 16-dimensional integral from computational finance. We also include a survey of QMC aimed at a statistical readership.}
+}
+
 @unpublished{hospedalesMetaLearningNeuralNetworks2020,
   title = {Meta-{{Learning}} in {{Neural Networks}}: {{A Survey}}},
   shorttitle = {Meta-{{Learning}} in {{Neural Networks}}},
@@ -1490,6 +1729,23 @@
   abstract = {Normalizing flows and autoregressive models have been successfully combined to produce state-of-the-art results in density estimation, via Masked Autoregressive Flows (MAF) (Papamakarios et al., 2017), and to accelerate state-of-the-art WaveNet-based speech synthesis to 20x faster than real-time (Oord et al., 2017), via Inverse Autoregressive Flows (IAF) (Kingma et al., 2016). We unify and generalize these approaches, replacing the (conditionally) affine univariate transformations of MAF/IAF with a more general class of invertible univariate transformations expressed as monotonic neural networks. We demonstrate that the proposed neural autoregressive flows (NAF) are universal approximators for continuous probability distributions, and their greater expressivity allows them to better capture multimodal target distributions. Experimentally, NAF yields state-of-the-art performance on a suite of density estimation tasks and outperforms IAF in variational autoencoders trained on binarized MNIST.},
   eventtitle = {International {{Conference}} on {{Machine Learning}}},
   langid = {english}
+}
+
+@article{huangPointPatternSynthesisUsing2022,
+  title = {Point-{{Pattern Synthesis}} Using {{Gabor}} and {{Random Filters}}},
+  author = {Huang, Xingchang and Memari, Pooran and Seidel, Hans-Peter and Singh, Gurprit},
+  date = {2022},
+  journaltitle = {Computer Graphics Forum},
+  volume = {41},
+  number = {4},
+  pages = {169--179},
+  issn = {1467-8659},
+  doi = {10.1111/cgf.14596},
+  url = {https://onlinelibrary.wiley.com/doi/abs/10.1111/cgf.14596},
+  urldate = {2022-11-15},
+  abstract = {Point pattern synthesis requires capturing both local and non-local correlations from a given exemplar. Recent works employ deep hierarchical representations from VGG-19 [SZ15] convolutional network to capture the features for both point-pattern and texture synthesis. In this work, we develop a simplified optimization pipeline that uses more traditional Gabor transform-based features. These features when convolved with simple random filters gives highly expressive feature maps. The resulting framework requires significantly less feature maps compared to VGG-19-based methods [TLH19; RGF∗20], better captures both the local and non-local structures, does not require any specific data set training and can easily extend to handle multi-class and multi-attribute point patterns, e.g., disk and other element distributions. To validate our pipeline, we perform qualitative and quantitative analysis on a large variety of point patterns to demonstrate the effectiveness of our approach. Finally, to better understand the impact of random filters, we include a spectral analysis using filters with different frequency bandwidths.},
+  langid = {english},
+  annotation = {\_eprint: https://onlinelibrary.wiley.com/doi/pdf/10.1111/cgf.14596}
 }
 
 @article{huDeepBRDFDeepRepresentation2020,
@@ -1578,6 +1834,23 @@
   urldate = {2022-09-16},
   abstract = {This paper investigates different vector step-size adaptation approaches for non-stationary online, continual prediction problems. Vanilla stochastic gradient descent can be considerably improved by scaling the update with a vector of appropriately chosen step-sizes. Many methods, including Ada-Grad, RMSProp, and AMSGrad, keep statistics about the learning process to approximate a second order update—a vector approximation of the inverse Hessian. Another family of approaches use meta-gradient descent to adapt the step-size parameters to minimize prediction error. These metadescent strategies are promising for non-stationary problems, but have not been as extensively explored as quasi-second order methods. We first derive a general, incremental metadescent algorithm, called AdaGain, designed to be applicable to a much broader range of algorithms, including those with semi-gradient updates or even those with accelerations, such as RMSProp. We provide an empirical comparison of methods from both families. We conclude that methods from both families can perform well, but in non-stationary prediction problems the meta-descent methods exhibit advantages. Our method is particularly robust across several prediction problems, and is competitive with the state-of-the-art method on a large-scale, time-series prediction problem on real data from a mobile robot.},
   isbn = {978-1-57735-809-1}
+}
+
+@article{jakobLowDimensionalFunctionSpace2019,
+  title = {A {{Low-Dimensional Function Space}} for {{Efficient Spectral Upsampling}}},
+  author = {Jakob, Wenzel and Hanika, Johannes},
+  date = {2019},
+  journaltitle = {Computer Graphics Forum},
+  volume = {38},
+  number = {2},
+  pages = {147--155},
+  issn = {1467-8659},
+  doi = {10.1111/cgf.13626},
+  url = {https://onlinelibrary.wiley.com/doi/abs/10.1111/cgf.13626},
+  urldate = {2022-12-01},
+  abstract = {We present a versatile technique to convert textures with tristimulus colors into the spectral domain, allowing such content to be used in modern rendering systems. Our method is based on the observation that suitable reflectance spectra can be represented using a low-dimensional parametric model that is intrinsically smooth and energy-conserving, which leads to significant simplifications compared to prior work. The resulting spectral textures are compact and efficient: storage requirements are identical to standard RGB textures, and as few as six floating point instructions are required to evaluate them at any wavelength. Our model is the first spectral upsampling method to achieve zero error on the full sRGB gamut. The technique also supports large-gamut color spaces, and can be vectorized effectively for use in rendering systems that handle many wavelengths at once.},
+  langid = {english},
+  annotation = {\_eprint: https://onlinelibrary.wiley.com/doi/pdf/10.1111/cgf.13626}
 }
 
 @software{jakobMitsubaRenderer2010,
@@ -2017,6 +2290,54 @@
   publisher = {{JMLR Workshop and Conference Proceedings}}
 }
 
+@article{lattasAvatarMeFacialShape2022,
+  title = {{{AvatarMe}}++: {{Facial Shape}} and {{BRDF Inference With Photorealistic Rendering-Aware GANs}}},
+  shorttitle = {{{AvatarMe}}++},
+  author = {Lattas, Alexandros and Moschoglou, Stylianos and Ploumpis, Stylianos and Gecer, Baris and Ghosh, Abhijeet and Zafeiriou, Stefanos},
+  date = {2022-12},
+  journaltitle = {IEEE Transactions on Pattern Analysis and Machine Intelligence},
+  volume = {44},
+  number = {12},
+  pages = {9269--9284},
+  issn = {1939-3539},
+  doi = {10.1109/TPAMI.2021.3125598},
+  abstract = {Over the last years, with the advent of Generative Adversarial Networks (GANs), many face analysis tasks have accomplished astounding performance, with applications including, but not limited to, face generation and 3D face reconstruction from a single “in-the-wild” image. Nevertheless, to the best of our knowledge, there is no method which can produce render-ready high-resolution 3D faces from “in-the-wild” images and this can be attributed to the: (a) scarcity of available data for training, and (b) lack of robust methodologies that can successfully be applied on very high-resolution data. In this paper, we introduce the first method that is able to reconstruct photorealistic render-ready 3D facial geometry and BRDF from a single “in-the-wild” image. To achieve this, we capture a large dataset of facial shape and reflectance, which we have made public. Moreover, we define a fast and photorealistic differentiable rendering methodology with accurate facial skin diffuse and specular reflection, self-occlusion and subsurface scattering approximation. With this, we train a network that disentangles the facial diffuse and specular reflectance components from a mesh and texture with baked illumination, scanned or reconstructed with a 3DMM fitting method. As we demonstrate in a series of qualitative and quantitative experiments, our method outperforms the existing arts by a significant margin and reconstructs authentic, 4K by 6K-resolution 3D faces from a single low-resolution image, that are ready to be rendered in various applications and bridge the uncanny valley.},
+  eventtitle = {{{IEEE Transactions}} on {{Pattern Analysis}} and {{Machine Intelligence}}}
+}
+
+@inproceedings{lattasAvatarMeRealisticallyRenderable2020,
+  title = {{{AvatarMe}}: {{Realistically Renderable 3D Facial Reconstruction}} “{{In-the-Wild}}”},
+  shorttitle = {{{AvatarMe}}},
+  booktitle = {2020 {{IEEE}}/{{CVF Conference}} on {{Computer Vision}} and {{Pattern Recognition}} ({{CVPR}})},
+  author = {Lattas, Alexandros and Moschoglou, Stylianos and Gecer, Baris and Ploumpis, Stylianos and Triantafyllou, Vasileios and Ghosh, Abhijeet and Zafeiriou, Stefanos},
+  date = {2020-06},
+  pages = {757--766},
+  publisher = {{IEEE}},
+  location = {{Seattle, WA, USA}},
+  doi = {10.1109/CVPR42600.2020.00084},
+  url = {https://ieeexplore.ieee.org/document/9157794/},
+  urldate = {2022-11-29},
+  eventtitle = {2020 {{IEEE}}/{{CVF Conference}} on {{Computer Vision}} and {{Pattern Recognition}} ({{CVPR}})},
+  isbn = {978-1-72817-168-5},
+  langid = {english}
+}
+
+@inproceedings{lattasPracticalScalableDesktopBased2022,
+  title = {Practical and {{Scalable Desktop-Based High-Quality Facial Capture}}},
+  booktitle = {Computer {{Vision}} – {{ECCV}} 2022},
+  author = {Lattas, Alexandros and Lin, Yiming and Kannan, Jayanth and Ozturk, Ekin and Filipi, Luca and Guarnera, Giuseppe Claudio and Chawla, Gaurav and Ghosh, Abhijeet},
+  editor = {Avidan, Shai and Brostow, Gabriel and Cissé, Moustapha and Farinella, Giovanni Maria and Hassner, Tal},
+  date = {2022},
+  series = {Lecture {{Notes}} in {{Computer Science}}},
+  pages = {522--537},
+  publisher = {{Springer Nature Switzerland}},
+  location = {{Cham}},
+  doi = {10.1007/978-3-031-20068-7_30},
+  abstract = {We present a novel desktop-based system for high-quality facial capture including geometry and facial appearance. The proposed acquisition system is highly practical and scalable, consisting purely of commodity components. The setup consists of a set of displays for controlled illumination for reflectance capture, in conjunction with multiview acquisition of facial geometry. We additionally present a novel set of modulated binary illumination patterns for efficient acquisition of reflectance and photometric normals using our setup, with diffuse-specular separation. We demonstrate high-quality results with two different variants of the capture setup – one entirely consisting of portable mobile devices targeting static facial capture, and the other consisting of desktop LCD displays targeting both static and dynamic facial capture.},
+  isbn = {978-3-031-20068-7},
+  langid = {english}
+}
+
 @article{lecunGradientbasedLearningApplied1998,
   title = {Gradient-Based Learning Applied to Document Recognition},
   author = {Lecun, Y. and Bottou, L. and Bengio, Y. and Haffner, P.},
@@ -2196,6 +2517,22 @@
   eventtitle = {2017 {{IEEE International Conference}} on {{Computer Vision}} ({{ICCV}})}
 }
 
+@inproceedings{lokovicDeepShadowMaps2000,
+  title = {Deep Shadow Maps},
+  booktitle = {Proceedings of the 27th Annual Conference on {{Computer}} Graphics and Interactive Techniques},
+  author = {Lokovic, Tom and Veach, Eric},
+  date = {2000-07-01},
+  series = {{{SIGGRAPH}} '00},
+  pages = {385--392},
+  publisher = {{ACM Press/Addison-Wesley Publishing Co.}},
+  location = {{USA}},
+  doi = {10.1145/344779.344958},
+  url = {https://doi.org/10.1145/344779.344958},
+  urldate = {2022-11-05},
+  abstract = {We introduce deep shadow maps, a technique that produces fast, high-quality shadows for primitives such as hair, fur, and smoke. Unlike traditional shadow maps, which store a single depth at each pixel, deep shadow maps store a representation of the fractional visibility through a pixel at all possible depths. Deep shadow maps have several advantages. First, they are prefiltered, which allows faster shadow lookups and much smaller memory footprints than regular shadow maps of similar quality. Second, they support shadows from partially transparent surfaces and volumetric objects such as fog. Third, they handle important cases of motion blur at no extra cost. The algorithm is simple to implement and can be added easily to existing renderers as an alternative to ordinary shadow maps.},
+  isbn = {978-1-58113-208-3}
+}
+
 @article{loperSMPLSkinnedMultiperson2015,
   title = {{{SMPL}}: A Skinned Multi-Person Linear Model},
   shorttitle = {{{SMPL}}},
@@ -2335,6 +2672,22 @@
   url = {https://onlinelibrary.wiley.com/doi/10.1002/mrm.21391},
   urldate = {2022-03-08},
   langid = {english}
+}
+
+@article{mallettSpectralPrimaryDecomposition2019,
+  title = {Spectral {{Primary Decomposition}} for {{Rendering}} with {{sRGB Reflectance}}},
+  author = {Mallett, Ian and Yuksel, Cem},
+  date = {2019},
+  journaltitle = {Eurographics Symposium on Rendering - DL-only and Industry Track},
+  pages = {7 pages},
+  publisher = {{The Eurographics Association}},
+  issn = {1727-3463},
+  doi = {10.2312/SR.20191216},
+  url = {https://diglib.eg.org/handle/10.2312/sr20191216},
+  urldate = {2022-12-01},
+  abstract = {Spectral renderers, as-compared to RGB renderers, are able to simulate light transport that is closer to reality, capturing light behavior that is impossible to simulate with any three-primary decomposition. However, spectral rendering requires spectral scene data (e.g. textures and material properties), which is not widely available, severely limiting the practicality of spectral rendering. Unfortunately, producing a physically valid reflectance spectrum from a given sRGB triple has been a challenging problem, and indeed until very recently constructing a spectrum without colorimetric round-trip error was thought to be impossible. In this paper, we introduce a new procedure for efficiently generating a reflectance spectrum from any given sRGB input data. We show for the first time that it is possible to create any sRGB reflectance spectrum as a linear combination of three separate spectra, each directly corresponding to one of the BT.709 primaries. Our approach produces consistent results, such that the input sRGB value is perfectly reproduced by the corresponding reflectance spectrum under D65 illumination, bounded only by Monte Carlo and numerical error. We provide a complete implementation, including a precomputed spectral basis, and discuss important optimizations and generalization to other RGB spaces.},
+  isbn = {9783038680956},
+  version = {009-015}
 }
 
 @article{margossianReviewAutomaticDifferentiation2019,
@@ -2478,6 +2831,23 @@
   urldate = {2022-05-10},
   eventtitle = {2019 {{IEEE}}/{{CVF International Conference}} on {{Computer Vision}} ({{ICCV}})},
   isbn = {978-1-72814-803-8}
+}
+
+@article{mehtaXNectRealtimeMultiperson2020,
+  title = {{{XNect}}: Real-Time Multi-Person {{3D}} Motion Capture with a Single {{RGB}} Camera},
+  shorttitle = {{{XNect}}},
+  author = {Mehta, Dushyant and Sotnychenko, Oleksandr and Mueller, Franziska and Xu, Weipeng and Elgharib, Mohamed and Fua, Pascal and Seidel, Hans-Peter and Rhodin, Helge and Pons-Moll, Gerard and Theobalt, Christian},
+  date = {2020-08-12},
+  journaltitle = {ACM Transactions on Graphics},
+  shortjournal = {ACM Trans. Graph.},
+  volume = {39},
+  number = {4},
+  pages = {82:82:1--82:82:17},
+  issn = {0730-0301},
+  doi = {10.1145/3386569.3392410},
+  url = {https://doi.org/10.1145/3386569.3392410},
+  urldate = {2022-11-24},
+  abstract = {We present a real-time approach for multi-person 3D motion capture at over 30 fps using a single RGB camera. It operates successfully in generic scenes which may contain occlusions by objects and by other people. Our method operates in subsequent stages. The first stage is a convolutional neural network (CNN) that estimates 2D and 3D pose features along with identity assignments for all visible joints of all individuals. We contribute a new architecture for this CNN, called SelecSLS Net, that uses novel selective long and short range skip connections to improve the information flow allowing for a drastically faster network without compromising accuracy. In the second stage, a fullyconnected neural network turns the possibly partial (on account of occlusion) 2D pose and 3D pose features for each subject into a complete 3D pose estimate per individual. The third stage applies space-time skeletal model fitting to the predicted 2D and 3D pose per subject to further reconcile the 2D and 3D pose, and enforce temporal coherence. Our method returns the full skeletal pose in joint angles for each subject. This is a further key distinction from previous work that do not produce joint angle results of a coherent skeleton in real time for multi-person scenes. The proposed system runs on consumer hardware at a previously unseen speed of more than 30 fps given 512x320 images as input while achieving state-of-the-art accuracy, which we will demonstrate on a range of challenging real-world scenes.}
 }
 
 @inproceedings{melaxDynamicsBased3D2013,
@@ -2727,6 +3097,22 @@
   langid = {english}
 }
 
+@article{nicoletLargeStepsInverse2021,
+  title = {Large Steps in Inverse Rendering of Geometry},
+  author = {Nicolet, Baptiste and Jacobson, Alec and Jakob, Wenzel},
+  date = {2021-12-10},
+  journaltitle = {ACM Transactions on Graphics},
+  shortjournal = {ACM Trans. Graph.},
+  volume = {40},
+  number = {6},
+  pages = {248:1--248:13},
+  issn = {0730-0301},
+  doi = {10.1145/3478513.3480501},
+  url = {https://doi.org/10.1145/3478513.3480501},
+  urldate = {2022-12-05},
+  abstract = {Inverse reconstruction from images is a central problem in many scientific and engineering disciplines. Recent progress on differentiable rendering has led to methods that can efficiently differentiate the full process of image formation with respect to millions of parameters to solve such problems via gradient-based optimization. At the same time, the availability of cheap derivatives does not necessarily make an inverse problem easy to solve. Mesh-based representations remain a particular source of irritation: an adverse gradient step involving vertex positions could turn parts of the mesh inside-out, introduce numerous local self-intersections, or lead to inadequate usage of the vertex budget due to distortion. These types of issues are often irrecoverable in the sense that subsequent optimization steps will further exacerbate them. In other words, the optimization lacks robustness due to an objective function with substantial non-convexity. Such robustness issues are commonly mitigated by imposing additional regularization, typically in the form of Laplacian energies that quantify and improve the smoothness of the current iterate. However, regularization introduces its own set of problems: solutions must now compromise between solving the problem and being smooth. Furthermore, gradient steps involving a Laplacian energy resemble Jacobi's iterative method for solving linear equations that is known for its exceptionally slow convergence. We propose a simple and practical alternative that casts differentiable rendering into the framework of preconditioned gradient descent. Our pre-conditioner biases gradient steps towards smooth solutions without requiring the final solution to be smooth. In contrast to Jacobi-style iteration, each gradient step propagates information among all variables, enabling convergence using fewer and larger steps. Our method is not restricted to meshes and can also accelerate the reconstruction of other representations, where smooth solutions are generally expected. We demonstrate its superior performance in the context of geometric optimization and texture reconstruction.}
+}
+
 @article{nielsenOptimalMinimalBRDF2015,
   title = {On Optimal, Minimal {{BRDF}} Sampling for Reflectance Acquisition},
   author = {Nielsen, Jannik Boll and Jensen, Henrik Wann and Ramamoorthi, Ravi},
@@ -2774,6 +3160,18 @@
   url = {https://doi.org/10.1145/3386569.3392406},
   urldate = {2022-08-01},
   abstract = {Physically based differentiable rendering has recently evolved into a powerful tool for solving inverse problems involving light. Methods in this area perform a differentiable simulation of the physical process of light transport and scattering to estimate partial derivatives relating scene parameters to pixels in the rendered image. Together with gradient-based optimization, such algorithms have interesting applications in diverse disciplines, e.g., to improve the reconstruction of 3D scenes, while accounting for interreflection and transparency, or to design meta-materials with specified optical properties. The most versatile differentiable rendering algorithms rely on reverse-mode differentiation to compute all requested derivatives at once, enabling optimization of scene descriptions with millions of free parameters. However, a severe limitation of the reverse-mode approach is that it requires a detailed transcript of the computation that is subsequently replayed to back-propagate derivatives to the scene parameters. The transcript of typical renderings is extremely large, exceeding the available system memory by many orders of magnitude, hence current methods are limited to simple scenes rendered at low resolutions and sample counts. We introduce radiative backpropagation, a fundamentally different approach to differentiable rendering that does not require a transcript, greatly improving its scalability and efficiency. Our main insight is that reverse-mode propagation through a rendering algorithm can be interpreted as the solution of a continuous transport problem involving the partial derivative of radiance with respect to the optimization objective. This quantity is "emitted" by sensors, "scattered" by the scene, and eventually "received" by objects with differentiable parameters. Differentiable rendering then decomposes into two separate primal and adjoint simulation steps that scale to complex scenes rendered at high resolutions. We also investigated biased variants of this algorithm and find that they considerably improve both runtime and convergence speed. We showcase an efficient GPU implementation of radiative backpropagation and compare its performance and the quality of its gradients to prior work.}
+}
+
+@article{nogueemiliePolarizationimagingSurfaceReflectometry2022,
+  title = {Polarization-Imaging {{Surface Reflectometry}} Using {{Near-field Display}}},
+  author = {Nogue, Emilie and Lin, Yiming and Ghosh, Abhijeet},
+  date = {2022},
+  pages = {9 pages},
+  publisher = {{The Eurographics Association}},
+  doi = {10.2312/SR.20221154},
+  url = {https://diglib.eg.org/handle/10.2312/sr20221154},
+  urldate = {2022-11-25},
+  abstract = {We present a practical method for measurement of spatially varying isotropic surface reflectance of planar samples using a combination of single-view polarization imaging and near-field display illumination. Unlike previous works that have required multiview imaging or more complex polarization measurements, our method requires only three linear polarizer measurements from a single viewpoint for estimating diffuse and specular albedo and spatially varying specular roughness. We obtain highquality estimate of the surface normal with two additional polarized measurements under a gradient illumination pattern. Our approach enables high-quality renderings of planar surfaces while reducing measurements to a near-optimal number for the estimated SVBRDF parameters.}
 }
 
 @misc{nowozinFGANTrainingGenerative2016,
@@ -2844,6 +3242,38 @@
   abstract = {Finding neural network weights that generalize well from small datasets is difficult. A promising approach is to learn a weight initialization such that a small number of weight changes results in...},
   eventtitle = {Advances in {{Neural Information Processing Systems}}},
   langid = {english}
+}
+
+@article{owenSafeEffectiveImportance2000,
+  title = {Safe and {{Effective Importance Sampling}}},
+  author = {Owen, Art and Zhou, Yi},
+  date = {2000},
+  journaltitle = {Journal of the American Statistical Association},
+  volume = {95},
+  number = {449},
+  eprint = {2669533},
+  eprinttype = {jstor},
+  pages = {135--143},
+  publisher = {{[American Statistical Association, Taylor \& Francis, Ltd.]}},
+  issn = {0162-1459},
+  doi = {10.2307/2669533},
+  abstract = {We present two improvements on the technique of importance sampling. First, we show that importance sampling from a mixture of densities, using those densities as control variates, results in a useful upper bound on the asymptotic variance. That bound is a small multiple of the asymptotic variance of importance sampling from the best single component density. This allows one to benefit from the great variance reductions obtainable by importance sampling, while protecting against the equally great variance increases that might take the practitioner by surprise. The second improvement is to show how importance sampling from two or more densities can be used to approach a zero sampling variance even for integrands that take both positive and negative values.}
+}
+
+@misc{oztireliComprehensiveTheoryVariational2019,
+  title = {A {{Comprehensive Theory}} and {{Variational Framework}} for {{Anti-aliasing Sampling Patterns}}},
+  author = {Öztireli, A. Cengiz},
+  date = {2019-02-20},
+  number = {arXiv:1902.08228},
+  eprint = {1902.08228},
+  eprinttype = {arxiv},
+  primaryclass = {cs},
+  publisher = {{arXiv}},
+  doi = {10.48550/arXiv.1902.08228},
+  url = {http://arxiv.org/abs/1902.08228},
+  urldate = {2022-11-27},
+  abstract = {In this paper, we provide a comprehensive theory of anti-aliasing sampling patterns that explains and revises known results, and show how patterns as predicted by the theory can be generated via a variational optimization framework. We start by deriving the exact spectral expression for expected error in reconstructing an image in terms of power spectra of sampling patterns, and analyzing how the shape of power spectra is related to anti-aliasing properties. Based on this analysis, we then formulate the problem of generating anti-aliasing sampling patterns as constrained variational optimization on power spectra. This allows us to not rely on any parametric form, and thus explore the whole space of realizable spectra. We show that the resulting optimized sampling patterns lead to reconstructions with less visible aliasing artifacts, while keeping low frequencies as clean as possible.},
+  archiveprefix = {arXiv}
 }
 
 @inproceedings{papamakariosMaskedAutoregressiveFlow2017,
@@ -2933,6 +3363,22 @@
   title = {Automatic Differentiation in {{PyTorch}}},
   author = {Paszke, Adam and Gross, Sam and Chintala, Soumith and Chanan, Gregory and Yang, Edward and DeVito, Zachary and Lin, Zeming and Desmaison, Alban and Antiga, Luca and Lerer, Adam},
   date = {2017}
+}
+
+@article{pattanaikAdjointEquationsRandom1995,
+  title = {Adjoint Equations and Random Walks for Illumination Computation},
+  author = {Pattanaik, S. N. and Mudur, S. P.},
+  date = {1995-01-01},
+  journaltitle = {ACM Transactions on Graphics},
+  shortjournal = {ACM Trans. Graph.},
+  volume = {14},
+  number = {1},
+  pages = {77--102},
+  issn = {0730-0301},
+  doi = {10.1145/200972.200985},
+  url = {https://doi.org/10.1145/200972.200985},
+  urldate = {2022-11-05},
+  abstract = {In this paper we introduce the potential equation that along with the rendering equation forms an adjoint system of equations and provides a mathematical frame work for all known approaches to illumination computation based on geometric optics. The potential equation is more natural for illumination computations that simulate light propagation starting from the light sources, such as progressive radiosity and particle tracing. Using the mathematical handles provided by this framework and the random-walk solution model, we present a number of importance sampling schemes for improving the computation of flux estimation. Of particular significance is the use of approximately computed potential for directing a majority of the random walks through regions of importance in the environment, thus reducing the variance in the estimates of luminous flux in these regions. Finally, results from a simple implementation are presented to demonstrate the high-efficiency improvements made possible by the use of these techniques.}
 }
 
 @article{peckPuttingYourselfSkin2013,
@@ -3063,6 +3509,17 @@
   url = {https://www.cv-foundation.org/openaccess/content_cvpr_2014/html/Qian_Realtime_and_Robust_2014_CVPR_paper.html},
   urldate = {2022-04-10},
   eventtitle = {Proceedings of the {{IEEE Conference}} on {{Computer Vision}} and {{Pattern Recognition}}}
+}
+
+@inproceedings{quinnDifferentiablePathTracing2020,
+  title = {Differentiable {{Path Tracing}} by {{Regularizing Discontinuities}}},
+  booktitle = {2020 {{Workshop}}},
+  author = {Quinn, Peter and Parent-Lévesque, Jérôme and Oztireli, Cengiz and Nowrouzezahrai, Derek},
+  date = {2020},
+  pages = {6},
+  abstract = {Recently, viewing computer vision as an inverse rendering problem has led to a growing interest in differentiable rendering. We introduce a novel differentiable path tracing algorithm where discontinuities in the rendering process are regularized through blurring of the geometry. Our differentiable renderer implements full global illumination and has parameters for controlling the regularization, which allows for some control over the smoothness of the loss landscape. We successfully apply our system to solve several examples of challenging inverse rendering optimization problems that involve more complex light transport scenarios that cannot be handled by rasterization-based differentiable renderers.},
+  eventtitle = {{{NeurIPS}}},
+  langid = {english}
 }
 
 @unpublished{raghuRapidLearningFeature2020,
@@ -3361,6 +3818,36 @@
   langid = {english}
 }
 
+@article{salaunRegressionbasedMonteCarlo2022,
+  title = {Regression-Based {{Monte Carlo}} Integration},
+  author = {Salaün, Corentin and Gruson, Adrien and Hua, Binh-Son and Hachisuka, Toshiya and Singh, Gurprit},
+  date = {2022-07-22},
+  journaltitle = {ACM Transactions on Graphics},
+  shortjournal = {ACM Trans. Graph.},
+  volume = {41},
+  number = {4},
+  pages = {79:1--79:14},
+  issn = {0730-0301},
+  doi = {10.1145/3528223.3530095},
+  url = {https://doi.org/10.1145/3528223.3530095},
+  urldate = {2022-11-11},
+  abstract = {Monte Carlo integration is typically interpreted as an estimator of the expected value using stochastic samples. There exists an alternative interpretation in calculus where Monte Carlo integration can be seen as estimating a constant function---from the stochastic evaluations of the integrand---that integrates to the original integral. The integral mean value theorem states that this constant function should be the mean (or expectation) of the integrand. Since both interpretations result in the same estimator, little attention has been devoted to the calculus-oriented interpretation. We show that the calculus-oriented interpretation actually implies the possibility of using a more complex function than a constant one to construct a more efficient estimator for Monte Carlo integration. We build a new estimator based on this interpretation and relate our estimator to control variates with least-squares regression on the stochastic samples of the integrand. Unlike prior work, our resulting estimator is provably better than or equal to the conventional Monte Carlo estimator. To demonstrate the strength of our approach, we introduce a practical estimator that can act as a simple drop-in replacement for conventional Monte Carlo integration. We experimentally validate our framework on various light transport integrals. The code is available at https://github.com/iribis/regressionmc.}
+}
+
+@misc{salaunScalableMulticlassSampling2022,
+  title = {Scalable Multi-Class Sampling via Filtered Sliced Optimal Transport},
+  author = {Salaün, Corentin and Georgiev, Iliyan and Seidel, Hans-Peter and Singh, Gurprit},
+  date = {2022-11-08},
+  eprint = {2211.04314},
+  eprinttype = {arxiv},
+  primaryclass = {cs},
+  doi = {10.1145/3550454.3555484},
+  url = {http://arxiv.org/abs/2211.04314},
+  urldate = {2022-11-15},
+  abstract = {We propose a multi-class point optimization formulation based on continuous Wasserstein barycenters. Our formulation is designed to handle hundreds to thousands of optimization objectives and comes with a practical optimization scheme. We demonstrate the effectiveness of our framework on various sampling applications like stippling, object placement, and Monte-Carlo integration. We a derive multi-class error bound for perceptual rendering error which can be minimized using our optimization. We provide source code at https://github.com/iribis/filtered-sliced-optimal-transport.},
+  archiveprefix = {arXiv}
+}
+
 @article{sanchez-vivesVirtualHandIllusion2010,
   title = {Virtual {{Hand Illusion Induced}} by {{Visuomotor Correlations}}},
   author = {Sanchez-Vives, Maria V. and Spanlang, Bernhard and Frisoli, Antonio and Bergamasco, Massimo and Slater, Mel},
@@ -3499,6 +3986,22 @@
   pages = {50}
 }
 
+@misc{shengControllableShadowGeneration2022,
+  title = {Controllable {{Shadow Generation Using Pixel Height Maps}}},
+  author = {Sheng, Yichen and Liu, Yifan and Zhang, Jianming and Yin, Wei and Oztireli, A. Cengiz and Zhang, He and Lin, Zhe and Shechtman, Eli and Benes, Bedrich},
+  date = {2022-07-15},
+  number = {arXiv:2207.05385},
+  eprint = {2207.05385},
+  eprinttype = {arxiv},
+  primaryclass = {cs},
+  publisher = {{arXiv}},
+  doi = {10.48550/arXiv.2207.05385},
+  url = {http://arxiv.org/abs/2207.05385},
+  urldate = {2022-11-27},
+  abstract = {Shadows are essential for realistic image compositing. Physics-based shadow rendering methods require 3D geometries, which are not always available. Deep learning-based shadow synthesis methods learn a mapping from the light information to an object's shadow without explicitly modeling the shadow geometry. Still, they lack control and are prone to visual artifacts. We introduce pixel heigh, a novel geometry representation that encodes the correlations between objects, ground, and camera pose. The pixel height can be calculated from 3D geometries, manually annotated on 2D images, and can also be predicted from a single-view RGB image by a supervised approach. It can be used to calculate hard shadows in a 2D image based on the projective geometry, providing precise control of the shadows' direction and shape. Furthermore, we propose a data-driven soft shadow generator to apply softness to a hard shadow based on a softness input parameter. Qualitative and quantitative evaluations demonstrate that the proposed pixel height significantly improves the quality of the shadow generation while allowing for controllability.},
+  archiveprefix = {arXiv}
+}
+
 @inproceedings{simonHandKeypointDetection2017,
   title = {Hand {{Keypoint Detection}} in {{Single Images Using Multiview Bootstrapping}}},
   author = {Simon, Tomas and Joo, Hanbyul and Matthews, Iain and Sheikh, Yaser},
@@ -3508,6 +4011,23 @@
   url = {https://openaccess.thecvf.com/content_cvpr_2017/html/Simon_Hand_Keypoint_Detection_CVPR_2017_paper.html},
   urldate = {2022-04-14},
   eventtitle = {Proceedings of the {{IEEE Conference}} on {{Computer Vision}} and {{Pattern Recognition}}}
+}
+
+@article{singhAnalysisSampleCorrelations2019,
+  title = {Analysis of {{Sample Correlations}} for {{Monte Carlo Rendering}}},
+  author = {Singh, Gurprit and Öztireli, Cengiz and Ahmed, Abdalla G.M. and Coeurjolly, David and Subr, Kartic and Deussen, Oliver and Ostromoukhov, Victor and Ramamoorthi, Ravi and Jarosz, Wojciech},
+  date = {2019},
+  journaltitle = {Computer Graphics Forum},
+  volume = {38},
+  number = {2},
+  pages = {473--491},
+  issn = {1467-8659},
+  doi = {10.1111/cgf.13653},
+  url = {https://onlinelibrary.wiley.com/doi/abs/10.1111/cgf.13653},
+  urldate = {2022-12-01},
+  abstract = {Modern physically based rendering techniques critically depend on approximating integrals of high dimensional functions representing radiant light energy. Monte Carlo based integrators are the choice for complex scenes and effects. These integrators work by sampling the integrand at sample point locations. The distribution of these sample points determines convergence rates and noise in the final renderings. The characteristics of such distributions can be uniquely represented in terms of correlations of sampling point locations. Hence, it is essential to study these correlations to understand and adapt sample distributions for low error in integral approximation. In this work, we aim at providing a comprehensive and accessible overview of the techniques developed over the last decades to analyze such correlations, relate them to error in integrators, and understand when and how to use existing sampling algorithms for effective rendering workflows.},
+  langid = {english},
+  annotation = {\_eprint: https://onlinelibrary.wiley.com/doi/pdf/10.1111/cgf.13653}
 }
 
 @inproceedings{sitzmannImplicitNeuralRepresentations2020,
@@ -3935,11 +4455,44 @@
   archiveprefix = {arXiv}
 }
 
+@article{vanonzenoodtBlueNoisePlots2021,
+  title = {Blue {{Noise Plots}}},
+  author = {family=Onzenoodt, given=Christian, prefix=van, useprefix=true and Singh, Gurprit and Ropinski, Timo and Ritschel, Tobias},
+  date = {2021},
+  journaltitle = {Computer Graphics Forum},
+  volume = {40},
+  number = {2},
+  pages = {425--433},
+  issn = {1467-8659},
+  doi = {10.1111/cgf.142644},
+  url = {https://onlinelibrary.wiley.com/doi/abs/10.1111/cgf.142644},
+  urldate = {2022-11-18},
+  abstract = {We propose Blue Noise Plots, two-dimensional dot plots that depict data points of univariate data sets. While often one-dimensional strip plots are used to depict such data, one of their main problems is visual clutter which results from overlap. To reduce this overlap, jitter plots were introduced, whereby an additional, non-encoding plot dimension is introduced, along which the data point representing dots are randomly perturbed. Unfortunately, this randomness can suggest non-existent clusters, and often leads to visually unappealing plots, in which overlap might still occur. To overcome these shortcomings, we introduce Blue Noise Plots where random jitter along the non-encoding plot dimension is replaced by optimizing all dots to keep a minimum distance in 2D i. e., Blue Noise. We evaluate the effectiveness as well as the aesthetics of Blue Noise Plots through both, a quantitative and a qualitative user study. The Python implementation of Blue Noise Plots is available here.},
+  langid = {english},
+  annotation = {\_eprint: https://onlinelibrary.wiley.com/doi/pdf/10.1111/cgf.142644}
+}
+
 @book{vapnikEstimationDependencesBased2006,
   title = {Estimation of Dependences Based on Empirical Data},
   author = {Vapnik, Vladimir},
   date = {2006},
   publisher = {{Springer Science \& Business Media}}
+}
+
+@inproceedings{veachBidirectionalEstimatorsLight1995,
+  title = {Bidirectional {{Estimators}} for {{Light Transport}}},
+  booktitle = {Photorealistic {{Rendering Techniques}}},
+  author = {Veach, Eric and Guibas, Leonidas},
+  editor = {Sakas, Georgios and Müller, Stefan and Shirley, Peter},
+  date = {1995},
+  series = {Focus on {{Computer Graphics}}},
+  pages = {145--167},
+  publisher = {{Springer}},
+  location = {{Berlin, Heidelberg}},
+  doi = {10.1007/978-3-642-87825-1_11},
+  abstract = {Most of the research on the global illumination problem in computer graphics has been concentrated on finite-element (radiosity) techniques. Monte Carlo methods are an intriguing alternative which are attractive for their ability to handle very general scene descriptions without the need for meshing. In this paper we study techniques for reducing the sampling noise inherent in pure Monte Carlo approaches to global illumination. Every light energy transport path from a light source to the eye can be generated in a number of different ways, according to how we partition the path into an initial portion traced from a light source, and a final portion traced from the eye. Each partitioning gives us a different unbiased estimator, but some partitionings give estimators with much lower variance than others. We give examples of this phenomenon and describe its significance. We also present work in progress on the problem of combining these multiple estimators to achieve near-optimal variance, with the goal of producing images with less noise for a given number of samples.},
+  isbn = {978-3-642-87825-1},
+  langid = {english}
 }
 
 @inproceedings{veachMetropolisLightTransport1997,
@@ -3955,6 +4508,37 @@
   url = {https://doi.org/10.1145/258734.258775},
   urldate = {2022-06-27},
   isbn = {978-0-89791-896-1}
+}
+
+@inproceedings{veachNonsymmetricScatteringLight1996,
+  title = {Non-Symmetric {{Scattering}} in {{Light Transport Algorithms}}},
+  booktitle = {Rendering {{Techniques}} ’96},
+  author = {Veach, Eric},
+  editor = {Pueyo, Xavier and Schröder, Peter},
+  date = {1996},
+  series = {Eurographics},
+  pages = {81--90},
+  publisher = {{Springer}},
+  location = {{Vienna}},
+  doi = {10.1007/978-3-7091-7484-5_9},
+  abstract = {Non-symmetric scattering is far more common in computer graphics than is generally recognized, and can occur even when the underlying scattering model is physically correct. For example, we show that non-symmetry occurs whenever light is refracted, and also whenever shading normals are used (e.g. due to interpolation of normals in a triangle mesh, or bump mapping [5]).},
+  isbn = {978-3-7091-7484-5},
+  langid = {english}
+}
+
+@inproceedings{veachOptimallyCombiningSampling1995,
+  title = {Optimally Combining Sampling Techniques for {{Monte Carlo}} Rendering},
+  booktitle = {Proceedings of the 22nd Annual Conference on {{Computer}} Graphics and Interactive Techniques},
+  author = {Veach, Eric and Guibas, Leonidas J.},
+  date = {1995-09-15},
+  series = {{{SIGGRAPH}} '95},
+  pages = {419--428},
+  publisher = {{Association for Computing Machinery}},
+  location = {{New York, NY, USA}},
+  doi = {10.1145/218380.218498},
+  url = {https://doi.org/10.1145/218380.218498},
+  urldate = {2022-11-05},
+  isbn = {978-0-89791-701-8}
 }
 
 @thesis{veachRobustMonteCarlo1998,
@@ -4030,6 +4614,19 @@
   urldate = {2022-08-14},
   abstract = {Path guiding is a family of adaptive variance reduction techniques in physically-based rendering, which includes methods for sampling both direct and indirect illumination, surfaces and volumes but also for sampling optimal path lengths and making splitting decisions. Since adoption of path tracing as a de facto standard in the VFX industry several years ago, there has been an increased interest in producing high-quality images with low amount of Monte Carlo samples per pixel. Path guiding, which has received attention in the research community in the past few years, has proven to be useful for this task and therefore has been adopted by Weta Digital. Recently, it has also been implemented in the Walt Disney Animation Studios' Hyperion and Pixar's Renderman. The goal of this course is to share our practical experience with path guiding in production and to provide self-contained overview of recently published techniques and to discuss their pros and cons. We also take audience through theoretical background of various path guiding methods which are mostly based on machine learning - used to adapt sampling distributons based on observed samples - and zero-variance random walk theory - used as a framework for combining different sampling decisions in an optimal way. At the end of our course we discuss open problems and invite researchers to further develop path guiding in their future work.},
   isbn = {978-1-4503-6307-5}
+}
+
+@inproceedings{walterMicrofacetModelsRefraction2007,
+  title = {Microfacet Models for Refraction through Rough Surfaces},
+  booktitle = {Proceedings of the 18th {{Eurographics}} Conference on {{Rendering Techniques}}},
+  author = {Walter, Bruce and Marschner, Stephen R. and Li, Hongsong and Torrance, Kenneth E.},
+  date = {2007-06-25},
+  series = {{{EGSR}}'07},
+  pages = {195--206},
+  publisher = {{Eurographics Association}},
+  location = {{Goslar, DEU}},
+  abstract = {Microfacet models have proven very successful for modeling light reflection from rough surfaces. In this paper we review microfacet theory and demonstrate how it can be extended to simulate transmission through rough surfaces such as etched glass. We compare the resulting transmission model to measured data from several real surfaces and discuss appropriate choices for the microfacet distribution and shadowing-masking functions. Since rendering transmission through media requires tracking light that crosses at least two interfaces, good importance sampling is a practical necessity. Therefore, we also describe efficient schemes for sampling the microfacet models and the corresponding probability density functions.},
+  isbn = {978-3-905673-52-4}
 }
 
 @inproceedings{wang6DHandsMarkerless2011,
@@ -4139,6 +4736,24 @@
   doi = {10.1145/142920.134078},
   url = {https://dl.acm.org/doi/10.1145/142920.134078},
   urldate = {2022-09-01},
+  langid = {english}
+}
+
+@article{weinbergFourGoldenLessons2003,
+  title = {Four Golden Lessons},
+  author = {Weinberg, Steven},
+  date = {2003-11},
+  journaltitle = {Nature},
+  volume = {426},
+  number = {6965},
+  pages = {389--389},
+  publisher = {{Nature Publishing Group}},
+  issn = {1476-4687},
+  doi = {10.1038/426389a},
+  url = {https://www.nature.com/articles/426389a},
+  urldate = {2022-12-05},
+  abstract = {Advice to students at the start of their scientific careers.},
+  issue = {6965},
   langid = {english}
 }
 
@@ -4342,6 +4957,22 @@
   urldate = {2022-08-14},
   abstract = {In this paper, we survey recent approaches to blue-noise sampling and discuss their beneficial applications. We discuss the sampling algorithms that use points as sampling primitives and classify the sampling algorithms based on various aspects, e.g., the sampling domain and the type of algorithm. We demonstrate several well-known applications that can be improved by recent blue-noise sampling techniques, as well as some new applications such as dynamic sampling and blue-noise remeshing.},
   langid = {english}
+}
+
+@article{yifanDifferentiableSurfaceSplatting2019,
+  title = {Differentiable Surface Splatting for Point-Based Geometry Processing},
+  author = {Yifan, Wang and Serena, Felice and Wu, Shihao and Öztireli, Cengiz and Sorkine-Hornung, Olga},
+  date = {2019-11-08},
+  journaltitle = {ACM Transactions on Graphics},
+  shortjournal = {ACM Trans. Graph.},
+  volume = {38},
+  number = {6},
+  pages = {230:1--230:14},
+  issn = {0730-0301},
+  doi = {10.1145/3355089.3356513},
+  url = {https://doi.org/10.1145/3355089.3356513},
+  urldate = {2022-11-27},
+  abstract = {We propose Differentiable Surface Splatting (DSS), a high-fidelity differentiable renderer for point clouds. Gradients for point locations and normals are carefully designed to handle discontinuities of the rendering function. Regularization terms are introduced to ensure uniform distribution of the points on the underlying surface. We demonstrate applications of DSS to inverse rendering for geometry synthesis and denoising, where large scale topological changes, as well as small scale detail modifications, are accurately and robustly handled without requiring explicit connectivity, outperforming state-of-the-art techniques. The data and code are at https://github.com/yifita/DSS.}
 }
 
 @inproceedings{yuanDepthBased3DHand2018,
@@ -4559,4 +5190,3 @@
   abstract = {Image-to-image translation is a class of vision and graphics problems where the goal is to learn the mapping between an input image and an output image using a training set of aligned image pairs. However, for many tasks, paired training data will not be available. We present an approach for learning to translate an image from a source domain \$X\$ to a target domain \$Y\$ in the absence of paired examples. Our goal is to learn a mapping \$G: X \textbackslash rightarrow Y\$ such that the distribution of images from \$G(X)\$ is indistinguishable from the distribution \$Y\$ using an adversarial loss. Because this mapping is highly under-constrained, we couple it with an inverse mapping \$F: Y \textbackslash rightarrow X\$ and introduce a cycle consistency loss to push \$F(G(X)) \textbackslash approx X\$ (and vice versa). Qualitative results are presented on several tasks where paired training data does not exist, including collection style transfer, object transfiguration, season transfer, photo enhancement, etc. Quantitative comparisons against several prior methods demonstrate the superiority of our approach.},
   archiveprefix = {arXiv}
 }
-
